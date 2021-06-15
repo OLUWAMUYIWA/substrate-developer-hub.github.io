@@ -34,7 +34,7 @@ from other blockchains. In the context of Substrate's
 [Balances pallet](https://substrate.dev/rustdocs/v3.0.0/pallet_balances/index.html), these accounts
 must have a minimum amount (an "existential deposit") to exist in storage.
 
-Account keys are defined generically and made concrete in the runtime.
+Account keys are defined generically within the pallet, and made concrete in the runtime.
 
 To continue with our example of Stash and Controller accounts, the keys to these accounts are
 distinguished by their intended use, not by any underlying cryptographic difference. When creating
@@ -44,7 +44,7 @@ Stash or Controller keys, all cryptography supported for normal account keys are
 
 The Stash keys are the public/private key pair that defines a Stash account. This account is like a
 "savings account" in that you should not make frequent transactions from it. Therefore, its private
-key should be treated with the utmost security, for example protected in a safe or layers of
+key should be treated with utmost security. Consider locking it up in a safe or under layers of
 hardware security.
 
 Since the Stash key is kept offline, it designates a Controller account to make non-spending
